@@ -21,7 +21,7 @@ export const agentService = {
           suggestions.push({
             id: `near-${msg.messageId}`,
             type: 'near-complete',
-            message: `Message ${msg.messageId.substring(0, 4)} is almost recovered (${Math.round(progress)}%)`,
+            message: `SIGNAL_STRENGTH_HIGH: Fragmented payload 0x${msg.messageId.substring(0, 4)} is ${Math.round(progress)}% reconstructed.`,
             priority: msg.priority
           });
         }
@@ -31,7 +31,7 @@ export const agentService = {
         suggestions.push({
           id: `emerg-${msg.messageId}`,
           type: 'emergency',
-          message: `URGENT BROADCAST: Priority data active.`,
+          message: `CRITICAL_BROADCAST: Emergency protocol active. Rebroadcast initiated.`,
           priority: 'emergency'
         });
       }
